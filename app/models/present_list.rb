@@ -1,0 +1,2 @@
+class PresentList < ApplicationRecord
+end

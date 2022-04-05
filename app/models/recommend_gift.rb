@@ -1,0 +1,2 @@
+class RecommendGift < ApplicationRecord
+end
