@@ -1,0 +1,64 @@
+<header>
+  <nav class="columns">
+    <section class="section">
+      <div class="column">
+        <%= link_to root_path, class:"header-title" do %>
+          <h1 class="title">GIFTEMO</h1>
+          <h2 class="subtitle">Leave as a memory.</h2>
+        <% end %>
+      </div>
+    </section>
+
+    <div class="column">
+    </div>
+    <div class="column">
+    </div>
+    <div class="column">
+    </div>
+    <div class="column">
+    </div>
+    <!--<div>-->
+      <!--<div class="header-center-top">〜ギフトに思い出を〜</div>-->
+    <!--  <div class="header-center-bottom">GIFTEMO</div>-->
+    <!--</div>-->
+
+    <div class="column">
+      <ul><br>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to name_list_index_path do %>
+              <button class="button is-warning">マイページ</button>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <button class="button is-warning">ログアウト</button>
+            <% end %>
+          </li>
+        <% elsif admin_signed_in? %>
+          <li class="nav-item">
+            <%= link_to admin_recommend_gift_index_path do %>
+              <button class="button is-warning">ギフト一覧</button>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to destroy_admin_session_path, method: :delete do %>
+              <button class="button is-warning">ログアウト</button>
+            <% end %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to new_user_registration_path do %>
+              <button class="button is-warning">新規登録</button>
+            <% end %>
+          </li><br>
+          <li class="nav-item">
+            <%= link_to new_user_session_path do %>
+              <button class="button is-warning">ログイン</button>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>
