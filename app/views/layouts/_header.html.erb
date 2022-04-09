@@ -26,10 +26,10 @@
       <ul><br>
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to name_list_index_path do %>
+            <%= link_to name_list_index_path do %><br>
               <button class="button is-warning">マイページ</button>
             <% end %>
-          </li>
+          </li><br>
           <li class="nav-item">
             <%= link_to destroy_user_session_path, method: :delete do %>
               <button class="button is-warning">ログアウト</button>
@@ -37,10 +37,10 @@
           </li>
         <% elsif admin_signed_in? %>
           <li class="nav-item">
-            <%= link_to admin_recommend_gift_index_path do %>
+            <%= link_to admin_recommend_gift_index_path do %><br>
               <button class="button is-warning">ギフト一覧</button>
             <% end %>
-          </li>
+          </li><br>
           <li class="nav-item">
             <%= link_to destroy_admin_session_path, method: :delete do %>
               <button class="button is-warning">ログアウト</button>
@@ -49,12 +49,12 @@
         <% else %>
           <li class="nav-item">
             <%= link_to new_user_registration_path do %>
-              <button class="button is-warning">新規登録</button>
+              <button class="button is-warning, fa fa-user"> 新規登録</button>
             <% end %>
           </li><br>
           <li class="nav-item">
             <%= link_to new_user_session_path do %>
-              <button class="button is-warning">ログイン</button>
+              <button class="button is-warning, fa fa-right-to-bracket"> ログイン</button>
             <% end %>
           </li>
         <% end %>
