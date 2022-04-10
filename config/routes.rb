@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :admin,skip:[:registrations,:passwords],controllers:{
+  devise_for :admins,skip:[:registrations,:passwords],controllers:{
     sessions:"admin/sessions"
   }
 
@@ -11,16 +11,16 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: "homes#top"
-    resources :genre, only:[:new,:create,:index,:edit,:update,:destroy]
-    resources :recommend_gift, only:[:new,:create,:index,:edit,:update,:destroy,:show]
+    resources :genres, only:[:new,:create,:index,:edit,:update,:destroy]
+    resources :recommend_gifts, only:[:new,:create,:index,:edit,:update,:destroy,:show]
   end
 
   scope module: :public do
     root to: "homes#top"
-    resources :genre, only:[:index]
-    resources :recommend_gift, only:[:index,:show]
-    resources :present_list, only:[:index,:new,:create,:edit,:update,:destroy]
-    resources :name_list, only:[:index,:new,:create,:edit,:update,:destroy]
+    resources :genres, only:[:index]
+    resources :recommend_gifts, only:[:index,:show]
+    resources :present_lists, only:[:index,:new,:create,:edit,:update,:destroy]
+    resources :name_lists, only:[:index,:new,:create,:edit,:update,:destroy]
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
