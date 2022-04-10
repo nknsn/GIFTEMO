@@ -2,7 +2,7 @@ class Public::PresentListsController < ApplicationController
 
   def index
     @present_list = PresentList.new
-    @present_list = PresentList.all
+    @present_lists = PresentList.all
   end
 
 
@@ -20,4 +20,12 @@ class Public::PresentListsController < ApplicationController
 
   def destroy
   end
+
+
+  private
+
+  def present_list_params
+    params.require(:present_list).permit(:date,:product_name,:scene)
+  end
+
 end

@@ -1,0 +1,33 @@
+<div class="columns">
+  <div class="column is-3">
+    <h2>NEWギフト</h2>
+    <%= form_with model: @present_list, url:'/present_lists', method: :post do |f| %>
+      <h4>日付</h4>
+      <%= f.date_field :date %>
+      <h4>商品名</h4>
+      <%= f.text_field :product_name %>
+      <h4>理由</h4>
+      <%#= f. %>
+      <%= f.submit '追加' %>
+    <% end %>
+  </div>
+
+  <div class="column is-9">
+    <h2>ギフト録</h2>
+      <% @present_lists.each do |present| %>
+        <table>
+          <tr>
+            <th>日付</th>
+            <th>商品名</th>
+            <th>理由</th>
+          </tr>
+          <tr>
+            <td><%= present.date %></td>
+            <td><%= present.product_name %></td>
+            <td><%= present.scene %></td>
+            <td><%= link_to "編集", edit_present_list_path(@present_lists.ids) %></td>
+          </tr>
+        </table>
+      <% end %>
+  </div>
+</div>
