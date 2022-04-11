@@ -11,7 +11,7 @@ class Public::NameListsController < ApplicationController
     @name_list = NameList.new(name_list_params)
     @name_list.user_id = current_user.id
     if @name_list.save
-      redirect_to name_lists_path
+      redirect_to name_lists_path(current_user)
       flash[:notice]='You have created book successfully'
     else
       @name_lists = NameList.all

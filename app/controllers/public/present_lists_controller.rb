@@ -13,12 +13,16 @@ class Public::PresentListsController < ApplicationController
   end
 
   def edit
+    @present_list = Paserent_list.find(params[:id])
   end
 
   def update
   end
 
   def destroy
+    @present_list = PresentList.find(params[:id])
+    @present_list.destroy
+    redirect_to request.referer
   end
 
 

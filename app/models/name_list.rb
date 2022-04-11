@@ -1,2 +1,4 @@
 class NameList < ApplicationRecord
+  
+
 end

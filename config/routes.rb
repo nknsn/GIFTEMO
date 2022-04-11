@@ -19,8 +19,8 @@ Rails.application.routes.draw do
     root to: "homes#top"
     resources :genres, only:[:index]
     resources :recommend_gifts, only:[:index,:show]
-    resources :present_lists, only:[:index,:new,:create,:edit,:update,:destroy]
     resources :name_lists, only:[:index,:new,:create,:edit,:update,:destroy]
+    resources :present_lists, only:[:index,:new,:create,:edit,:update,:destroy]
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
