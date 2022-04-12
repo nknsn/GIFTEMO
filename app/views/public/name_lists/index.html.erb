@@ -2,7 +2,7 @@
   <div class="column is-3">
     <!--<form class="box">-->
       <h2>おつきあいリスト登録</h2>
-      <%= form_with model: @name_list, url: name_lists_path, method: :post do |f| %>
+      <%= form_with model: @name_list, url: "/present_lists?name_list_id${name_list.id}", method: :post do |f| %>
         <!--<div class="field">-->
         <!--  <label class="label">お名前</label>-->
         <h4>お名前</h4>
@@ -42,10 +42,16 @@
   </div>
   <div class="column is-9">
     <h2>おつきあいリスト</h2>
-      <% @name_lists.each do |list| %>
+      <% @name_lists.each do |name_list| %>
         <p>お名前</p>
-        <span><%= list.name %></span>
-        <%= link_to "ギフト", present_lists_path(@name_lists.ids) %>
+        <span><%= name_list.name %></span>
+        <%= link_to "ギフト", present_lists_path(name_list.id) %>
       <% end %>
   </div>
 </div>
+
+    <!--User.name_lists.each do |name_list|-->
+    <!--  url = "localhost:3000/present_lists?name_list_id${name_list.id}"-->
+    <!--  # url === localhost:3000/present_lists?name_list_id=1-->
+
+    <!--end-->
