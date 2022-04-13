@@ -28,7 +28,7 @@ class Public::NameListsController < ApplicationController
   private
 
   def name_list_params
-    params.require(:name_list).permit(:name,:name_list_id)
+    params.require(:name_list).permit(:name,:name_list)
   end
 
 end

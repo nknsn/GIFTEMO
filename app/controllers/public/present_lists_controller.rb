@@ -6,7 +6,6 @@ class Public::PresentListsController < ApplicationController
     present_lists = PresentList.where(name_list_id: name_list_id)
     # @name_list = NameList.find(params[:id])
     # @present_lists = PresentList.where(name_list: @name_list)
-
     @present_list = PresentList.new
     @present_lists = PresentList.all
   end
@@ -36,14 +35,14 @@ class Public::PresentListsController < ApplicationController
   # end
 
 
-  # private
+  private
 
-  # def present_list_params
-  #   params.require(:present_list).permit(:date,:product_name,:scene)
-  # end
+  def present_list_params
+    params.require(:present_list).permit(:date,:product_name,:scene)
+  end
 
-  # def name_list_params
-  #   params.repuire(:name_list).permit(:name,:name_list_id)
-  # end
+  def name_list_params
+    params.repuire(:name_list).permit(:name,:name_list_id)
+  end
 
 end

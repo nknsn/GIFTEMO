@@ -49,13 +49,19 @@
         <% else %>
           <li class="nav-item">
             <%= link_to new_user_registration_path do %>
-              <button class="button is-warning, fa fa-user"> 新規登録</button>
+              <button class="button is-warning"> 新規登録</button>
             <% end %>
           </li><br>
           <li class="nav-item">
             <%= link_to new_user_session_path do %>
-              <button class="button is-warning, fa fa-right-to-bracket"> ログイン</button>
+              <button class="button is-warning"> ログイン</button>
             <% end %>
+          </li><br>
+          <li class="nav-item">
+            <%= link_to users_guest_sign_in_path, method: :post do %>
+              <button class="button is-warning">ゲストログイン（閲覧用）</button>
+            <% end %>
+        </div>
           </li>
         <% end %>
       </ul>
