@@ -15,8 +15,8 @@ class Public::NameListsController < ApplicationController
   def create
     @name_list = NameList.new(name_list_params)
     @name_list.user_id = current_user.id
-    if @name_list.save
-      redirect_to 
+    if @name_list.save!
+      redirect_to name_lists_path(current_user)
       flash[:notice]='You have created book successfully'
     else
       @name_lists = NameList.all
@@ -28,7 +28,7 @@ class Public::NameListsController < ApplicationController
   private
 
   def name_list_params
-    params.require(:name_list).permit(:name)
+    params.require(:name_list).permit(:name,:name_list_id)
   end
 
 end

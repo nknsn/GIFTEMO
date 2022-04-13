@@ -2,7 +2,7 @@
   <div class="column is-3">
     <!--<form class="box">-->
       <h2>おつきあいリスト登録</h2>
-      <%= form_with model: @name_list, url: "/present_lists?name_list_id${name_list.id}", method: :post do |f| %>
+      <%= form_with model: @name_list, url: name_lists_path, method: :post do |f| %>
         <!--<div class="field">-->
         <!--  <label class="label">お名前</label>-->
         <h4>お名前</h4>

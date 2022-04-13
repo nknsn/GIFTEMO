@@ -1,7 +1,7 @@
 <div class="columns">
   <div class="column is-3">
     <h2>NEWギフト</h2>
-    <%= form_with model: @present_list, url: present_lists_path, method: :post do |f| %>
+    <%= form_with model: @present_list, url: "/present_lists?name_list_id${name_list.id}", method: :post do |f| %>
       <h4>日付</h4>
       <%= f.date_field :date %>
       <h4>商品名</h4>

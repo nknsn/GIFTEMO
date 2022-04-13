@@ -4,7 +4,6 @@ class Public::PresentListsController < ApplicationController
   def index
     name_list_id = params[:name_list_id] # (1)
     present_lists = PresentList.where(name_list_id: name_list_id)
-
     # @name_list = NameList.find(params[:id])
     # @present_lists = PresentList.where(name_list: @name_list)
 
