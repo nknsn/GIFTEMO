@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     root to: "homes#top"
     resources :genres, only:[:index]
     resources :recommend_gifts, only:[:index,:show]
-    resources :name_lists, only:[:index,:new,:create,:edit,:update,:destroy]
+    resources :friends, only:[:index,:new,:create,:edit,:update,:destroy]
     resources :present_lists, only:[:index,:create,:edit,:update,:destroy]
   end
 

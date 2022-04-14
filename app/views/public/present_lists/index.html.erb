@@ -14,7 +14,7 @@
 
   <div class="column is-9">
     <h2>ギフト録</h2>
-      <% @present_lists.each do |present| %>
+      <% @present_lists.each do |present_list| %>
         <table>
           <tr>
             <th>日付</th>
@@ -22,9 +22,9 @@
             <th>理由</th>
           </tr>
           <tr>
-            <td><%= present.date %></td>
-            <td><%= present.product_name %></td>
-            <td><%= present.scene %></td>
+            <td><%= present_list.date %></td>
+            <td><%= present_list.product_name %></td>
+            <td><%= present_list.scene %></td>
             <td><%#= link_to "編集", edit_present_list_path(@present_list) %></td>
             <td><%#= link_to "削除", present_lists_path(@present_list), method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
           </tr>

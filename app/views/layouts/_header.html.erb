@@ -26,7 +26,7 @@
       <ul><br>
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to name_lists_path do %><br>
+            <%= link_to name_lists_path(current_user.id) do %><br>
               <button class="button is-warning">マイページ</button>
             <% end %>
           </li><br>
@@ -59,7 +59,7 @@
           </li><br>
           <li class="nav-item">
             <%= link_to users_guest_sign_in_path, method: :post do %>
-              <button class="button is-warning">ゲストログイン（閲覧用）</button>
+              <button class="button is-warning">ゲストログイン</button>
             <% end %>
         </div>
           </li>
