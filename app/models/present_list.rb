@@ -1,5 +1,5 @@
 class PresentList < ApplicationRecord
 
-has_many :name_lists, dependent: :destroy
+belongs_to :user
 
 end

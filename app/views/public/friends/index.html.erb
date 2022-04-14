@@ -1,0 +1,36 @@
+
+<div class="columns">
+  <div class="column is-3">
+
+      <h2>おつきあいリスト登録</h2>
+      <%= form_with model: @friend, url: friends_path, method: :post do |f| %>
+
+        <h4>お名前</h4>
+        <%= f.text_field :name %>
+
+        <h4>誕生日</h4>
+        <%= f.date_select :birthdate %>
+
+        <%= f.submit '登録' %>
+      <% end %>
+
+  </div>
+
+
+  <div class="column is-9">
+    <h2>おつきあいリスト</h2>
+      <% @friends.each do |friend| %>
+        <p>お名前</p>
+        <span><%= friend.name %></span>
+        <p>誕生日</p>
+        <span><%= friend.birthdate %></span>
+        <%#= link_to "ギフト", present_lists_path(friend.id) %>
+      <% end %>
+  </div>
+</div>
+
+    <!--User.name_lists.each do |name_list|-->
+    <!--  url = "localhost:3000/present_lists?name_list_id${name_list.id}"-->
+    <!--  # url === localhost:3000/present_lists?name_list_id=1-->
+
+    <!--end-->
