@@ -2,7 +2,7 @@ class Public::FriendsController < ApplicationController
 
   def index
     @friend = Friend.new
-    @friends = Friend.all
+    @friends = Friend.where(user_id: current_user.id)
   end
 
   def create
@@ -23,8 +23,5 @@ class Public::FriendsController < ApplicationController
     def friend_params
       params.require(:friend).permit(:name,:birthdate)
     end
-    
-    def user_params
-      params.require(:user).permit(:name,:email,:birthdate)
-    end
+
 end
