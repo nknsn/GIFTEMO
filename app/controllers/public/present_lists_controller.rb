@@ -3,15 +3,12 @@ class Public::PresentListsController < ApplicationController
 
   def index
     @present_list = PresentList.new
-    name_list_id = params[:name_list_id] # (1)
-    @present_lists = PresentList.where(name_list_id: name_list_id)
-    # @present_lists = PresentList.all
+    @present_lists = PresentList.where(user_id: current_user.id)
   end
 
 
   def create
     @present_list = PresentList.new(present_list_params)
-    name_list_id = params[:name_list_id]
     @present_list.save
     redirect_to present_lists_path(name_list_id)
   end
