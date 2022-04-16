@@ -3,15 +3,35 @@ class Public::PresentListsController < ApplicationController
 
   def index
     @present_list = PresentList.new
-    @present_lists = PresentList.where(user_id: current_user.id)
+    # @friend_new = current_user.friend.new
+    @present_lists = current_user.present_lists.all
   end
 
 
   def create
-    @present_list = PresentList.new(present_list_params)
-    @present_list.save
-    redirect_to present_lists_path(name_list_id)
+    # byebug
+    @present_list = current_user.present_lists.new(present_list_params)
+    if params[:present_list][:friend_number] == "2"
+      friend_new = current_user.friends.new(friend_params)
+      if friend_new.save
+        @present_list.name = friend_new.name
+        @present_list.birthdate = friend_new.birthdate
+        redirect_to present_lists_path
+      else
+        render :index
+      end
+    elsif params[:present_list][:friend_number] == "1"
+      if Friend.exists?(id: params[:present_list][:friend_id])
+        @friend = Friend.find(params[:present_list][:friend_id])
+        @present_list.name = @friend.name
+        @present_list.save
+        redirect_to present_lists_path
+      else
+        render :index
+      end
+    end
   end
+
 
 
   # def edit
@@ -31,11 +51,12 @@ class Public::PresentListsController < ApplicationController
   private
 
   def present_list_params
-    params.require(:present_list).permit(:date,:product_name,:scene,:user_id)
+    params.require(:present_list).permit(:date,:item,:scene,:user_id,:name,:birthdate)
   end
 
-  # def name_list_params
-  #   params.repuire(:name_list).permit(:name,:name_list_id)
-  # end
+  def friend_params
+    params.repuire(:friend).permit(:name,:birthdate,:friend_id)
+  end
+
 
 end

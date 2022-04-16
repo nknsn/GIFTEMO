@@ -5,14 +5,14 @@
       <div>
         <h4>日付</h4>
         <%= f.date_field :date %>
-      </div>
+      </div><br>
 
       <div>
       <h4>誰に</h4>
         <%= f.radio_button :friend_number, 1 %>
         <%= f.label :friend_number_1, "おつきあいリストから選択" %>
 
-        <%= f.select :friend_id, options_from_collection_for_select(Friend.all, :id, :name) %><br>
+        <%= f.select :friend_id, options_from_collection_for_select(Friend.all, :id, :name) %><br><br>
 
         <%= f.radio_button :friend_number, 2 %>
         <%= f.label :friend_number_2, "おつきあいリストに追加" %><br>
@@ -22,11 +22,11 @@
 
         <%= f.label :birthdate, "おたんじょうび" %>
         <%= f.date_select :birthdate %>
-      </div>
+      </div><br>
 
 
-      <h4>商品名</h4>
-      <%= f.text_field :item %>
+      <h4>アイテム</h4>
+      <%= f.text_field :item %><br>
 
       <h4>理由</h4>
       <%= f.text_field :scene %>
@@ -38,21 +38,27 @@
 
   <div class="column is-9">
     <h2>ギフト録</h2>
-      <% @present_lists.each do |present_list| %>
-        <table>
-          <tr>
-            <th>日付</th>
-            <th>商品名</th>
-            <th>理由</th>
-          </tr>
-          <tr>
-            <td><%= present_list.date %></td>
-            <td><%= present_list.item %></td>
-            <td><%= present_list.scene %></td>
-            <td><%#= link_to "編集", edit_present_list_path(@present_list) %></td>
-            <td><%#= link_to "削除", present_lists_path(@present_list), method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
-          </tr>
-        </table>
-      <% end %>
+      <table>
+          <thead>
+            <tr>
+              <th><h4>日付</h4></th>
+              <th><h4>相手</h4></th>
+              <th><h4>アイテム</h4></th>
+              <th><h4>理由</h4></th>
+            </tr>
+          </thead>
+        <% @present_lists.each do |present_list| %>
+          <tbody>
+            <tr>
+              <td><%= present_list.date %></td>
+              <td><%= present_list.name %></td>
+              <td><%= present_list.item %></td>
+              <td><%= present_list.scene %></td>
+              <td><%#= link_to "編集", edit_present_list_path(@present_list) %></td>
+              <td><%#= link_to "削除", present_lists_path(@present_list), method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
   </div>
 </div>

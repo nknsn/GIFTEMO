@@ -2,7 +2,7 @@
 <div class="columns">
   <div class="column is-3">
 
-      <h2>おつきあいリスト登録</h2>
+      <h2>[Friends登録]</h2>
       <%= form_with model: @friend, url: friends_path, method: :post do |f| %>
 
         <h4>お名前</h4>
@@ -18,7 +18,12 @@
 
 
   <div class="column is-9">
-    <h2>おつきあいリスト</h2>
+
+    <%#= render 'public/shared/search' %>
+    <!--ArgumentError in Public::Friends#index wrong number of arguments (given 1, expected 3..4)-->
+
+
+    <h2>Friends</h2>
       <% @friends.each do |friend| %>
         <p>お名前</p>
         <span><%= friend.name %></span>
