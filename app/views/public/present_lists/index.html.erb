@@ -37,28 +37,8 @@
 
 
   <div class="column is-9">
-    <h2>ギフト録</h2>
-      <table>
-          <thead>
-            <tr>
-              <th><h4>日付</h4></th>
-              <th><h4>相手</h4></th>
-              <th><h4>アイテム</h4></th>
-              <th><h4>理由</h4></th>
-            </tr>
-          </thead>
-        <% @present_lists.each do |present_list| %>
-          <tbody>
-            <tr>
-              <td><%= present_list.date %></td>
-              <td><%= present_list.name %></td>
-              <td><%= present_list.item %></td>
-              <td><%= present_list.scene %></td>
-              <td><%#= link_to "編集", edit_present_list_path(@present_list) %></td>
-              <td><%#= link_to "削除", present_lists_path(@present_list), method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
-            </tr>
-          </tbody>
-        <% end %>
-      </table>
+
+    <%= render 'public/present_lists/index', present_lists: @present_lists %>
+
   </div>
 </div>

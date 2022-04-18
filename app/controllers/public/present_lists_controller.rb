@@ -16,6 +16,7 @@ class Public::PresentListsController < ApplicationController
       if friend_new.save
         @present_list.name = friend_new.name
         @present_list.birthdate = friend_new.birthdate
+        @present_list.save
         redirect_to present_lists_path
       else
         render :index
