@@ -19,11 +19,7 @@
 
   <div class="column is-9">
 
-    <%#= render 'public/shared/search' %>
-    <!--ArgumentError in Public::Friends#index wrong number of arguments (given 1, expected 3..4)-->
-
-
-    <%= render 'public/friends/index' friends: @firnends %>
+    <%= render 'public/friends/index', friends: @friends %>
 
   </div>
 </div>

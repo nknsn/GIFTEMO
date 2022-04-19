@@ -57,6 +57,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'kaminari','~> 1.2.1'
 gem 'dotenv-rails'
+gem 'rakuten_web_service'
+gem "bulma-rails", "~> 0.8.0"
+
 group :production do
   gem 'mysql2'
 end

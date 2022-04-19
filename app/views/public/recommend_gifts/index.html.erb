@@ -1,2 +1,13 @@
-<h1>Public::RecommendGifts#index</h1>
-<p>Find me in app/views/public/recommend_gifts/index.html.erb</p>
+<% i = 1 %>
+
+<% @items.each do |item| %>
+  <tr>
+    <td>
+      <button id="button" onclick="setlocalStorage()">保存</button>
+    </td>
+    <td><%= i %></td><% i += 1 %>
+    <td><img src="<%= item['smallImageUrls'][0] %>"></td>
+    <td><a href="<%= item['itemUrl'] %>" target="_blank"><%= item['itemName'] %></a></td>
+    <td><%= item['itemPrice'] %>円</td>
+  </tr>
+<% end %>
