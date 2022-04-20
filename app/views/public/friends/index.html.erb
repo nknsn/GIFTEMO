@@ -1,8 +1,8 @@
-
-<div class="columns">
-  <div class="column is-3">
-
-      <h2>[Friends登録]</h2>
+<div class="columns pt-6 pl-6 is-centered">
+  <div class="column is-half">
+    <h1 class="mt-2">
+      <strong><i class="fa fa-child "> おともだち登録</i></strong></h1>
+      
       <% if @friend.errors.any? %>
         <%= @friend.errors.count %>件のエラーが発生しました
         <ul>
@@ -12,8 +12,12 @@
         </ul>
       <% end %>
 
+    <%= form_with model: @friend, url: friends_path, method: :post do |f| %>
 
-      <%= form_with model: @friend, url: friends_path, method: :post do |f| %>
+
+
+
+
 
         <h4>お名前</h4>
         <%= f.text_field :name %>

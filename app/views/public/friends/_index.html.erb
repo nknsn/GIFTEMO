@@ -1,8 +1,15 @@
-    <h2>Friends</h2>
-      <% friends.each do |friend| %>
-        <p>お名前</p>
-        <span><%= friend.name %></span>
-        <p>誕生日</p>
-        <span><%= friend.birthdate %></span>
-        <%#= link_to "ギフト", present_lists_path(friend.id) %>
-      <% end %>
+
+  <% friends.each do |friend| %>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td>なまえ</td>
+          <td>誕生日</td>
+        </tr>
+        <tr>
+          <th><%= friend.name %></th>
+          <th><%= friend.birthdate %></th>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>

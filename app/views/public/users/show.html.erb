@@ -1,4 +1,4 @@
-<div class="columns is-centered">
+<div class="columns pt-6 pl-6 is-centered">
   <div class="column is-half">
     <!--<h1 class="mt-2">-->
     <!--  <strong>マイページ</strong></h1>-->
@@ -6,29 +6,38 @@
     <table class="table table-bordered">
       <tbody>
         <tr>
-          <td>NAME</td>
+          <td>MY NAME</td>
           <td><%= @user.name %></td>
         </tr>
         <tr>
-          <td>BIRTHDAY</td>
+          <td>MY BIRTHDAY</td>
           <td><%= @user.birthdate %></td>
         </tr>
         <tr>
-          <td>EMAIL ADDRESS</td>
+          <td>MY EMAIL ADDRESS</td>
           <td><%= @user.email %></td>
         </tr>
      </tbody>
     </table>
+    <div>
+      <%= link_to  edit_user_path, class: "button is-outlined" do %>
+        <i class="fa fa-cog "></i>
+      <% end %>
+    </div>
   </div>
 
-  <div class="columns">
 
+  <div class="column is-2">
+    <div>
+      <%= link_to friends_path, class: "button is-black" do %>
+        <i class="fa fa-users "> おともだちリスト</i>
+      <% end %>
+    </div><br>
+    <div>
+      <%= link_to present_lists_path, class: "button is-black" do %>
+        <i class="fa fa-star"> ギフトリスト</i>
+      <% end %>
+    </div>
   </div>
+
 </div>
-
-        <div>
-          <%= link_to "Friends", friends_path %>
-        </div>
-        <div>
-          <%= link_to "Presents", present_lists_path %>
-        </div>

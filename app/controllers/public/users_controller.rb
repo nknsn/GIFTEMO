@@ -10,8 +10,18 @@ class Public::UsersController < ApplicationController
   end
 
   def update
-    user = User.find(params[:id])
-    user.update(user_params)
-    redirect_to user_path(current_user.id)
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to user_path(@user), notice: "You have updated user successfully."
+    else
+      render :edit
+    end
   end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :birthdate, :emai)
+  end
+
 end
