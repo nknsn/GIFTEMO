@@ -1,13 +1,35 @@
 <% i = 1 %>
+<div class="columns is-centered">
+  <div class="column is-half">
+    <!--<table class="table">-->
+      <% @items.each do |item| %>
+        <div class="tile is-ancestor is-parent">
+          <div class="tile is-parent is-vertical">
+            <div class="tile is-child notification">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <!--<td>-->
+                  <!--  <button id="button" onclick="setlocalStorage()">保存</button>-->
+                  <!--</td>-->
+                  <td><%= i %></td><% i += 1 %>
+                  <td><img src="<%= item['mediumImageUrls'][0] %>"></td>
+                  <td><a href="<%= item['itemUrl'] %>" target="_blank"><%= item['itemName'] %></a></td>
+                  <td><%= item['itemPrice'] %>円</td>
+                  <!--<td><%#= item['genreId'] %></td>-->
+                </tr>
+              </tbody>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <!--</table>-->
+  </div>
+</div>
 
-<% @items.each do |item| %>
-  <tr>
-    <td>
-      <button id="button" onclick="setlocalStorage()">保存</button>
-    </td>
-    <td><%= i %></td><% i += 1 %>
-    <td><img src="<%= item['smallImageUrls'][0] %>"></td>
-    <td><a href="<%= item['itemUrl'] %>" target="_blank"><%= item['itemName'] %></a></td>
-    <td><%= item['itemPrice'] %>円</td>
-  </tr>
-<% end %>

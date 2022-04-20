@@ -1,6 +1,17 @@
 <div class="columns">
   <div class="column is-3">
     <h2>NEWギフト</h2>
+    
+      <% if @present_list.errors.any? %>
+        <%= @present_list.errors.count %>件のエラーが発生しました
+        <ul>
+          <% @present_list.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>    
+    
+    
     <%= form_with model: @present_list, url: present_lists_path, method: :post do |f| %>
       <div>
         <h4>日付</h4>

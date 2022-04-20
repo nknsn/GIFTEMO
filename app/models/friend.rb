@@ -2,6 +2,9 @@ class Friend < ApplicationRecord
   
   belongs_to :user
   
+  validates :name,presence: true
+  validates :birthdate,presence: true
+  
   def self.search_for(content, method)
     if method == 'perfect_match'
       Friend.where(name: content)
