@@ -34,19 +34,27 @@ class Public::PresentListsController < ApplicationController
   end
 
 
+  def edit
+    @present_list = PresentList.find(params[:id])
+  end
 
-  # def edit
-  #   @present_list = Paserent_list.find(params[:id])
-  # end
 
-  # def update
-  # end
+  def update
+    @present_list = PresentList.find(params[:id])
+    if @present_list.update(present_list_params)
+      redirect_to present_list_path(current_user)
+      flash[:notice]='更新しました！'
+    else
+      render :edit
+    end
+  end
 
-  # def destroy
-  #   @present_list = PresentList.find(params[:id])
-  #   @present_list.destroy
-  #   redirect_to request.referer
-  # end
+
+  def destroy
+    @present_list = PresentList.find(params[:id])
+    @present_list.destroy
+    redirect_to request.referer
+  end
 
 
   private
@@ -58,6 +66,4 @@ class Public::PresentListsController < ApplicationController
   def friend_params
     params.repuire(:friend).permit(:name,:birthdate,:friend_id)
   end
-
-
 end

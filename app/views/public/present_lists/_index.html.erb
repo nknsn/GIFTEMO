@@ -1,23 +1,32 @@
-    <h2>ギフト録</h2>
-      <table>
-          <thead>
-            <tr>
-              <th><h4>日付</h4></th>
-              <th><h4>相手</h4></th>
-              <th><h4>アイテム</h4></th>
-              <th><h4>理由</h4></th>
-            </tr>
-          </thead>
-        <% present_lists.each do |present_list| %>
-          <tbody>
-            <tr>
-              <td><%= present_list.date %></td>
-              <td><%= present_list.name %></td>
-              <td><%= present_list.item %></td>
-              <td><%= present_list.scene %></td>
-              <td><%#= link_to "編集", edit_present_list_path(@present_list) %></td>
-              <td><%#= link_to "削除", present_lists_path(@present_list), method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
-            </tr>
-          </tbody>
+<table width="800" class="table table-bordered">
+  <thead>
+    <tr>
+      <th><strong>日付</strong></th>
+      <th><strong>相手</strong></th>
+      <th><strong>アイテム</strong></th>
+      <th><strong>シーン</strong></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <% present_lists.each do |present_list| %>
+  <tbody>
+    <tr>
+      <td><%= present_list.date %></td>
+      <td><%= present_list.name %></td>
+      <td><%= present_list.item %></td>
+      <td><%= present_list.scene %></td>
+      <td>
+        <%= link_to edit_present_list_path(present_list), class: "button is-success is-inverted" do %>
+          <i class="fa fa-pencil-square-o fa-lg"></i>
         <% end %>
-      </table>
+      </td>
+      <td>
+        <%= link_to present_list_path(present_list), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "button is-danger is-inverted" do %>
+          <i class="fa fa-trash-o fa-lg"></i>
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>

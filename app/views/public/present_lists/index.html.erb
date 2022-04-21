@@ -8,7 +8,7 @@
   </ul>
   <% end %>
   <div class="column is-one-thirds px-6">
-    <div class="tile is-ancestor is-parent">
+    <div class="tile is-ancestor">
       <div class="tile is-parent is-vertical">
         <div class="tile is-child notification">
           <h1 class="mt-2">
@@ -18,7 +18,6 @@
 
               <%= f.date_field :date %><br>
 
-            <div>
             <!--<h3><i class="fa fa-user-plus "></i></h3>-->
               <%= f.radio_button :friend_number, 1 %>
               <%= f.label :friend_number_1, "おともだちリストから選択" %>
@@ -32,14 +31,14 @@
 
               <i class="fa fa-birthday-cake fa-lg "></i>
               <%= f.date_select :birthdate, use_month_numbers: true,start_year: 1940, end_year: (Time.now.year - 10), default: Date.new(2000, 1, 1) %><br>
-            </div><br>
+              <br>
 
 
               <%= f.text_field :item, :placeholder => "アイテム", class: "input" %><br>
               <br>
               <%= f.text_field :scene, :placeholder => "シーン", class: "input" %><br>
               <br>
-              <%= f.submit '保存', class: "input" %>
+              <%= f.submit '保存', class: "button is-black" %>
             <% end %>
           </div>
         </div>
@@ -50,7 +49,5 @@
 
   <div class="column is-two-thirds pl-6">
     <%= render 'public/present_lists/index', present_lists: @present_lists %>
-
   </div>
-</div>
 </div>

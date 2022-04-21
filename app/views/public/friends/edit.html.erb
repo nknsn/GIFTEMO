@@ -1,0 +1,25 @@
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+
+        <%= form_with model: @friend, local:true do |f| %>
+          <div class="field">
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input" %>
+          </div>
+
+          <div class="field">
+            <h4><i class="fa fa-birthday-cake fa-lg "></i></h4>
+            <%= f.date_select :birthdate, use_month_numbers: true,start_year: 1940, end_year: (Time.now.year - 10), default: Date.new(2000, 1, 1), class: "input" %>
+          </div>
+
+            <i class="fa fa-camera-retro fa-lg "></i>
+              <%= f.file_field :image, accept: "image/*" %><br>
+            <br>
+            
+          <div class="actions">
+            <%= f.submit "更新", class: "button is-black" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>

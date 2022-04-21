@@ -12,7 +12,7 @@
   <div>
     <div class="column is-one-thirds px-6">
         <%= form_with model: @friend, url: friends_path, method: :post do |f| %>
-        <div class="tile is-ancestor is-parent">
+        <div class="tile is-ancestor">
           <div class="tile is-parent is-vertical">
             <div class="tile is-child notification">
               <h1 class="mt-2">
@@ -28,7 +28,7 @@
                   <i class="fa fa-camera-retro fa-lg "></i>
                   <%= f.file_field :image, accept: "image/*" %><br>
                   <br>
-                  <%= f.submit "登録",  class: "input"  %>
+                  <%= f.submit "登録",  class: "button is-black"  %>
         <% end %>
             </div>
           </div>
@@ -37,8 +37,7 @@
   </div>
 
   <div class="column is-two-thirds pl-6">
-      <%= render 'public/friends/index', friends: @friends %>
-
+      <%= render 'public/friends/index', friends: @friends, friend: @friend %>
   </div>
 </div>
 
