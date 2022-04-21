@@ -21,7 +21,7 @@ class Public::FriendsController < ApplicationController
     private
 
     def friend_params
-      params.require(:friend).permit(:name,:birthdate)
+      params.require(:friend).permit(:name,:birthdate,:image)
     end
 
 end

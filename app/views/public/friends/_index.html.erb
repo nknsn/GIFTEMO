@@ -1,15 +1,13 @@
+<% friends.each do |friend| %>
 
-  <% friends.each do |friend| %>
+
     <table class="table table-bordered">
       <tbody>
         <tr>
-          <td>なまえ</td>
-          <td>誕生日</td>
-        </tr>
-        <tr>
-          <th><%= friend.name %></th>
-          <th><%= friend.birthdate %></th>
+          <th><%= image_tag friend.get_image,size:"50x50" %></th>
+          <th><i class="fa fa-child "> <%= friend.name %></i></th>
+          <th><i class="fa fa-birthday-cake"> <%= friend.birthdate %></i></th>
         </tr>
       </tbody>
     </table>
-  <% end %>
+<% end %>

@@ -1,55 +1,56 @@
-<div class="columns">
-  <div class="column is-3">
-    <h2>NEWギフト</h2>
-    
-      <% if @present_list.errors.any? %>
-        <%= @present_list.errors.count %>件のエラーが発生しました
-        <ul>
-          <% @present_list.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      <% end %>    
-    
-    
-    <%= form_with model: @present_list, url: present_lists_path, method: :post do |f| %>
-      <div>
-        <h4>日付</h4>
-        <%= f.date_field :date %>
-      </div><br>
-
-      <div>
-      <h4>誰に</h4>
-        <%= f.radio_button :friend_number, 1 %>
-        <%= f.label :friend_number_1, "おつきあいリストから選択" %>
-
-        <%= f.select :friend_id, options_from_collection_for_select(Friend.all, :id, :name) %><br><br>
-
-        <%= f.radio_button :friend_number, 2 %>
-        <%= f.label :friend_number_2, "おつきあいリストに追加" %><br>
-
-        <%= f.label :name, "おなまえ" %>
-        <%= text_field_tag 'friend[name]', '',:placeholder => "おなまえ" %><br>
-
-        <%= f.label :birthdate, "おたんじょうび" %>
-        <%= f.date_select :birthdate %>
-      </div><br>
-
-
-      <h4>アイテム</h4>
-      <%= f.text_field :item %><br>
-
-      <h4>理由</h4>
-      <%= f.text_field :scene %>
-
-      <%= f.submit '保存' %>
+<div class="columns pt-6 ">
+  <% if @present_list.errors.any? %>
+  <%= @present_list.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @present_list.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
     <% end %>
-  </div>
+  </ul>
+  <% end %>
+  <div class="column is-one-thirds px-6">
+    <div class="tile is-ancestor is-parent">
+      <div class="tile is-parent is-vertical">
+        <div class="tile is-child notification">
+          <h1 class="mt-2">
+            <strong><i class="fa fa-diamond fa-lg "></i>ギフト登録</strong></h1><br>
+
+            <%= form_with model: @present_list, url: present_lists_path, method: :post do |f| %>
+
+              <%= f.date_field :date %><br>
+
+            <div>
+            <!--<h3><i class="fa fa-user-plus "></i></h3>-->
+              <%= f.radio_button :friend_number, 1 %>
+              <%= f.label :friend_number_1, "おともだちリストから選択" %>
+
+              <%= f.select :friend_id, options_from_collection_for_select(Friend.all, :id, :name) %><br><br>
+
+              <%= f.radio_button :friend_number, 2 %>
+              <%= f.label :friend_number_2, "おともだちリストに追加" %><br>
+
+              <%= text_field_tag 'friend[name]', '',:placeholder => "なまえ", class: "input" %><br>
+
+              <i class="fa fa-birthday-cake fa-lg "></i>
+              <%= f.date_select :birthdate, use_month_numbers: true,start_year: 1940, end_year: (Time.now.year - 10), default: Date.new(2000, 1, 1) %><br>
+            </div><br>
 
 
-  <div class="column is-9">
+              <%= f.text_field :item, :placeholder => "アイテム", class: "input" %><br>
+              <br>
+              <%= f.text_field :scene, :placeholder => "シーン", class: "input" %><br>
+              <br>
+              <%= f.submit '保存', class: "input" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
 
+
+
+  <div class="column is-two-thirds pl-6">
     <%= render 'public/present_lists/index', present_lists: @present_lists %>
 
   </div>
+</div>
 </div>

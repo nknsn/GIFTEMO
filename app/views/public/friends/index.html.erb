@@ -1,8 +1,5 @@
-<div class="columns pt-6 pl-6 is-centered">
-  <div class="column is-half">
-    <h1 class="mt-2">
-      <strong><i class="fa fa-child "> おともだち登録</i></strong></h1>
-      
+<div class="columns pt-6 ">
+
       <% if @friend.errors.any? %>
         <%= @friend.errors.count %>件のエラーが発生しました
         <ul>
@@ -12,31 +9,39 @@
         </ul>
       <% end %>
 
-    <%= form_with model: @friend, url: friends_path, method: :post do |f| %>
+  <div>
+    <div class="column is-one-thirds px-6">
+        <%= form_with model: @friend, url: friends_path, method: :post do |f| %>
+        <div class="tile is-ancestor is-parent">
+          <div class="tile is-parent is-vertical">
+            <div class="tile is-child notification">
+              <h1 class="mt-2">
+                <strong><i class="fa fa-child fa-lg "></i>おともだち登録</strong></h1><br>
 
+                  <%= f.text_field :name, :placeholder => "なまえ", class: "input" %><br>
 
+                  <br>
+                  <h4><i class="fa fa-birthday-cake fa-lg "></i></h4>
+                  <%= f.date_select :birthdate, use_month_numbers: true,start_year: 1940, end_year: (Time.now.year - 10), default: Date.new(2000, 1, 1) %><br>
+                  <br>
 
-
-
-
-        <h4>お名前</h4>
-        <%= f.text_field :name %>
-
-        <h4>誕生日</h4>
-        <%= f.date_select :birthdate, use_month_numbers: true,start_year: 1940, end_year: (Time.now.year - 10), default: Date.new(2000, 1, 1) %>
-
-        <%= f.submit '登録' %>
-      <% end %>
-
+                  <i class="fa fa-camera-retro fa-lg "></i>
+                  <%= f.file_field :image, accept: "image/*" %><br>
+                  <br>
+                  <%= f.submit "登録",  class: "input"  %>
+        <% end %>
+            </div>
+          </div>
+        </div>
+    </div>
   </div>
 
-
-  <div class="column is-9">
-
-    <%= render 'public/friends/index', friends: @friends %>
+  <div class="column is-two-thirds pl-6">
+      <%= render 'public/friends/index', friends: @friends %>
 
   </div>
 </div>
+
 
     <!--User.name_lists.each do |name_list|-->
     <!--  url = "localhost:3000/present_lists?name_list_id${name_list.id}"-->
