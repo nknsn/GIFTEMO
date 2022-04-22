@@ -19,11 +19,13 @@
         </tr>
      </tbody>
     </table>
+    <% if @user.name != "guestuser" %>
     <div>
       <%= link_to  edit_user_path, class: "button is-outlined" do %>
         <i class="fa fa-pencil fa-2x"></i>
       <% end %>
     </div>
+    <% end %>
   </div>
 
 

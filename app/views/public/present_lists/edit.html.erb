@@ -1,1 +1,30 @@
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
 
+      <%= form_with model: @present_list, local:true do |f| %>
+
+        <div class="field">
+          <%= f.date_field :date %><br>
+        </div>
+
+          <%= f.label :friend_number_1, "おともだちリストから選択" %>
+          <%= f.select :friend_id, options_from_collection_for_select(Friend.all, :id, :name) %><br><br>
+
+        <i class="fa fa-birthday-cake fa-lg "></i>
+          <%= f.date_select :birthdate, use_month_numbers: true,start_year: 1940, end_year: (Time.now.year - 10), default: Date.new(2000, 1, 1) %><br>
+        <br>
+
+        <div class="field">
+          <%= f.text_field :item, :placeholder => "アイテム", class: "input" %><br>
+        </div><br>
+
+        <div class="field">
+          <%= f.text_field :scene, :placeholder => "シーン", class: "input" %><br>
+        </div><br>
+
+        <div class="actions">
+          <%= f.submit '更新する', class: "button is-black" %>
+        </div>
+      <% end %>
+    </div>
