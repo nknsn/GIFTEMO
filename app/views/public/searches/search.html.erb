@@ -1,11 +1,11 @@
 <table>
   <% if @model == "friend" %>
-    <h2>Friends search for "<%= @content %>"</h2>
+    <!--<h2>Friends search for "<%#= @content %>"</h2>-->
 
       <%= render 'public/friends/index', friends: @records %>
 
   <% else %>
-    <h2>Presents search for "<%= @content %>"</h2>
+    <!--<h2>Presents search for "<%#= @content %>"</h2>-->
       <%= render 'public/present_lists/index', present_lists: @records %>
 
   <% end %>

@@ -3,17 +3,16 @@ class Public::PresentListsController < ApplicationController
 
   def index
     @present_list = PresentList.new
-    # @friend_new = current_user.friend.new
     @present_lists = current_user.present_lists.all
   end
 
 
   def create
-    # byebug
     @present_list = current_user.present_lists.new(present_list_params)
     if params[:present_list][:friend_number] == "2"
-      friend_new = current_user.friends.new(friend_params)
-      if friend_new.save
+      birthdate = "#{present_list_params['birthdate(1i)']}-#{present_list_params['birthdate(2i)']}-#{present_list_params['birthdate(3i)']}"
+      friend_new = current_user.friends.new(name: friend_params['name'], birthdate: birthdate)
+      if friend_new.save!
         @present_list.name = friend_new.name
         @present_list.birthdate = friend_new.birthdate
         @present_list.save
@@ -64,6 +63,6 @@ class Public::PresentListsController < ApplicationController
   end
 
   def friend_params
-    params.repuire(:friend).permit(:name,:birthdate,:friend_id)
+    params.require(:friend).permit(:name,:birthdate,:friend_id)
   end
 end
