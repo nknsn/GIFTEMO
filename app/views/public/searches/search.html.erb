@@ -1,12 +1,21 @@
-<table>
+
   <% if @model == "friend" %>
     <!--<h2>Friends search for "<%#= @content %>"</h2>-->
-
+    <div class="columns pt-6 ">
+      <%= render 'public/friends/form', friend: @friend %>
+      <div class="column is-two-thirds pl-6">
       <%= render 'public/friends/index', friends: @records %>
+      </div>
+    </div>
+
 
   <% else %>
     <!--<h2>Presents search for "<%#= @content %>"</h2>-->
+    <div class="columns pt-6 ">
+      <%= render 'public/present_lists/form', present_list: @present_list %>
+      <div class="column is-two-thirds pl-6">
       <%= render 'public/present_lists/index', present_lists: @records %>
-
+      </div>
+    </div>
   <% end %>
 

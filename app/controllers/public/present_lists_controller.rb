@@ -1,5 +1,6 @@
 class Public::PresentListsController < ApplicationController
 
+  before_action :authenticate_user!
 
   def index
     @present_list = PresentList.new
@@ -18,6 +19,7 @@ class Public::PresentListsController < ApplicationController
         @present_list.save
         redirect_to present_lists_path
       else
+        @present_lists = current_user.present_lists.all
         render :index
       end
     elsif params[:present_list][:friend_number] == "1"
@@ -27,6 +29,7 @@ class Public::PresentListsController < ApplicationController
         @present_list.save
         redirect_to present_lists_path
       else
+        @present_lists = current_user.present_lists.all
         render :index
       end
     end

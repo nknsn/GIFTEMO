@@ -1,11 +1,13 @@
 class PresentList < ApplicationRecord
 
   belongs_to :user
-  
+
   validates :date, presence: true
   validates :name, presence: true
   validates :item, presence: true
   validates :scene, presence: true
+  validates :friend_id, presence: true
+
 
 
   def self.search_for(content, method)

@@ -1,4 +1,5 @@
 class Public::FriendsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @friend = Friend.new
@@ -13,7 +14,7 @@ class Public::FriendsController < ApplicationController
       redirect_to friends_path(current_user)
       flash[:notice]='おともだちを新しく追加しました！'
     else
-      @friends = Friend.all
+      @friends = Friend.where(user_id: current_user.id)
       render :index
     end
   end

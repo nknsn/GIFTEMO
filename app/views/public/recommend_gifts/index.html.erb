@@ -1,6 +1,30 @@
+<div class="columns">
+  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+  <label for="openSidebarMenu" class="sidebarIconToggle">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"></div>
+    <div class="spinner diagonal part-2"></div>
+  </label>
+  <div id="sidebarMenu">
+    <ul class="sidebarMenuInner">
+      <li><a><%= link_to "EYE", recommend_gifts_path(status: 'eye') %></a></li>
+      <li><a><%= link_to "LIP", recommend_gifts_path(status: 'lip') %></a></li>
+      <li><a><%= link_to "NAIL", recommend_gifts_path(status: 'nail') %></a></li>
+      <li><a><%= link_to "BODY", recommend_gifts_path(status: 'body') %></a></li>
+      <li><a><%= link_to "HAIR", recommend_gifts_path(status: 'hair') %></a></li>
+    </ul>
+  </div>
+  <!--<div id='center' class="main center">-->
+  <!--  <div class="mainInner">-->
+  <!--    <div>~Recommend Gifts~</div>-->
+  <!--  </div>-->
+  <!--</div>-->
+</div>
+
 <% i = 1 %>
 <div class="columns is-centered">
   <div class="column is-half">
+    <!--<h1><strong>~Recommend Gifts~</strong></h1>-->
     <!--<table class="table">-->
       <% @items.each do |item| %>
         <div class="tile is-ancestor is-parent">
