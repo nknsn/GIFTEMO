@@ -1,6 +1,6 @@
 <div>
   <div class="column is-one-thirds px-6">
-    <%= flash[:notice] %>
+
       <div class="tile is-ancestor">
         <div class="tile is-parent is-vertical">
           <div class="tile is-child notification">
@@ -11,7 +11,6 @@
 
                 <%= f.date_field :date %><br>
 
-              <!--<h3><i class="fa fa-user-plus "></i></h3>-->
                 <%= f.radio_button :friend_number, 1 %>
                 <%= f.label :friend_number_1, "おともだちリストから選択" %>
 
@@ -41,7 +40,7 @@
         <h5><%= present_list.errors.count %>件のエラーが発生しました</h5>
         <ul>
           <% present_list.errors.full_messages.each do |message| %>
-          <h5><li><%= message %></li></h5>
+          <li><%= message %></li>
           <% end %>
         </ul>
       <% end %>

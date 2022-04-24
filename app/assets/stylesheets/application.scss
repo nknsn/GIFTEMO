@@ -34,10 +34,26 @@
   padding: 10px;
 }
 
+.link-1 {
+  color: #808080;
+}
+
 .link {
   color: #FFFFFF;
 }
 
+.flash {
+    padding: 50px,50px;
+}
+
+p {
+  color: #FFFFFF;
+}
+
+p1 {
+  font-size: 35px;
+  color: #FFFFFF;
+}
 
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
 html, body {
@@ -53,12 +69,6 @@ body {
 
 
 
-// .main {
-//     margin: 0 auto;
-//     display: block;
-//     height: 100%;
-//     margin-top: 60px;
-// }
 
 .mainInner{
     display: table;
@@ -180,6 +190,8 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 
 
 Resources
+
+
 
 h1 {
   text-align: center;

@@ -1,71 +1,25 @@
 <div class="columns pt-6 is-centered">
-  <div>
-    <div class="column is-one-thirds px-6">
-      <!--<div class="tile is-ancestor is-parent">-->
-      <!--  <div class="tile is-parent is-vertical">-->
-      <!--    <div class="tile is-child notification">-->
-            <%= link_to recommend_gifts_path(status: 'eye') do %>
-              <%= image_tag'106472s.eye.jpeg', size: "120x120" %>
-            <% end %>
-      <!--    </div>-->
-      <!--  </div>-->
-      <!--</div>-->
-    </div>
+
+  <div class="pl-3">
+    <%= link_to new_user_registration_path, class:"link" do %>
+      <i class="fa fa-user fa-5x"></i><br>
+      <span>新規登録</span>
+    <% end %>
   </div>
 
-  <div>
-    <div class="column is-one-thirds px-6">
-      <!--<div class="tile is-ancestor is-parent">-->
-      <!--  <div class="tile is-parent is-vertical">-->
-      <!--    <div class="tile is-child notification">-->
-            <%= link_to recommend_gifts_path(status: 'lip') do %>
-              <%= image_tag'lip.2.jpeg', size: "120x120" %>
-            <% end %>
-      <!--    </div>-->
-      <!--  </div>-->
-      <!--</div>-->
-    </div>
+  <div class="pl-6">
+    <%= link_to new_user_session_path, class:"link" do %>
+      <i class="fa fa-unlock-alt fa-5x"></i><br>
+      <span>ログイン</span>
+    <% end %>
   </div>
 
-  <div>
-    <div class="column is-one-thirds px-6">
-      <!--<div class="tile is-ancestor is-parent">-->
-      <!--  <div class="tile is-parent is-vertical">-->
-      <!--    <div class="tile is-child notification">-->
-            <%= link_to recommend_gifts_path(status: 'nail') do %>
-              <%= image_tag'nail.1.jpeg', size: "120x120" %>
-            <% end %>
-      <!--    </div>-->
-      <!--  </div>-->
-      <!--</div>-->
-    </div>
-  </div>
-
-  <div>
-    <div class="column is-one-thirds px-6">
-      <!--<div class="tile is-ancestor is-parent">-->
-      <!--  <div class="tile is-parent is-vertical">-->
-      <!--    <div class="tile is-child notification">-->
-            <%= link_to recommend_gifts_path(status: 'body') do %>
-              <%= image_tag'162207s.body.jpeg', size: "120x120" %>
-            <% end %>
-      <!--    </div>-->
-      <!--  </div>-->
-      <!--</div>-->
-    </div>
-  </div>
-
-  <div>
-    <div class="column is-one-thirds px-6">
-      <!--<div class="tile is-ancestor is-parent">-->
-      <!--  <div class="tile is-parent is-vertical">-->
-      <!--    <div class="tile is-child notification">-->
-            <%= link_to recommend_gifts_path(status: 'hair') do %>
-              <%= image_tag'hair.jpeg', size: "120x120" %>
-            <% end %>
-      <!--    </div>-->
-      <!--  </div>-->
-      <!--</div>-->
-    </div>
+  <div class="pl-6">
+    <%= link_to users_guest_sign_in_path, method: :post, class:"link" do %>
+      <i class="fa fa-user-secret fa-5x"></i><br>
+      <span>  ゲスト用</span>
+    <% end %>
   </div>
 </div>
+
+<%= render 'public/recommend_gifts/top' %>
