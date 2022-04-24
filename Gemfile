@@ -59,6 +59,7 @@ gem 'kaminari','~> 1.2.1'
 gem 'dotenv-rails'
 gem 'rakuten_web_service'
 gem "bulma-rails", "~> 0.8.0"
+gem 'devise-i18n'
 
 group :production do
   gem 'mysql2'
