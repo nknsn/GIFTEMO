@@ -35,15 +35,16 @@
         </div>
       </div>
     </div>
-    <div class="error">
-      <% if present_list.errors.any? %>
-        <h5><%= present_list.errors.count %>件のエラーが発生しました</h5>
-        <ul>
-          <% present_list.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-          <% end %>
-        </ul>
-      <% end %>
-    </div>
+
+    <% if present_list&.errors&.any? %>
+      <div class="error">
+      <h5><%= present_list.errors.count %>件のエラーが発生しました</h5>
+      <ul>
+        <% present_list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+      </div>
+    <% end %>
   </div>
 </div>

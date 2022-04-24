@@ -1,7 +1,20 @@
-<div class="columns pt-5 pl-6 is-centered">
+<div class="columns">
+  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+  <label for="openSidebarMenu" class="sidebarIconToggle">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"></div>
+    <div class="spinner diagonal part-2"></div>
+  </label>
+  <div id="sidebarMenu">
+    <ul class="sidebarMenuInner">
+      <li><a><%= link_to "おともだちリスト", friends_path %></a></li>
+      <li><a><%= link_to "ギフトリスト", present_lists_path %></a></li>
+    </ul>
+  </div>
+</div>
 
 
-  <div class="column is-half">
+<div class="columns pt-6  is-centered">
     <table width="500" class="table table-bordered">
       <tbody>
         <tr>
@@ -25,22 +38,22 @@
       <% end %>
     </div>
     <% end %>
-  </div>
-
-
-  <div class="column is-2">
-    <div>
-      <%= link_to friends_path, class: "button is-black" do %>
-        <p><i class="fa fa-users fa-lg "></i> おともだちリスト</p>
-      <% end %>
-    </div><br>
-    <div>
-      <%= link_to present_lists_path, class: "button is-black" do %>
-        <p><i class="fa fa-gift fa-lg "></i> ギフトリスト</p>
-      <% end %>
-    </div>
-  </div>
 </div>
+
+
+  <!--<div class="column is-2">-->
+  <!--  <div>-->
+  <!--    <%#= link_to friends_path, class: "button is-black" do %>-->
+  <!--      <p><i class="fa fa-users fa-lg "></i> おともだちリスト</p>-->
+  <!--    <%# end %>-->
+  <!--  </div><br>-->
+  <!--  <div>-->
+  <!--    <%#= link_to present_lists_path, class: "button is-black" do %>-->
+  <!--      <p><i class="fa fa-gift fa-lg "></i> ギフトリスト</p>-->
+  <!--    <%# end %>-->
+  <!--  </div>-->
+  <!--</div>-->
+<!--</div>-->
 
 <%= render 'public/recommend_gifts/top' %>
 
