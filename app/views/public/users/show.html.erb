@@ -14,7 +14,8 @@
 </div>
 
 
-<div class="columns pt-6  is-centered">
+<div class="columns pt-6 is-centered">
+  <!--<div class="column is-8">-->
     <table width="500" class="table table-bordered">
       <tbody>
         <tr>
@@ -31,8 +32,9 @@
         </tr>
      </tbody>
     </table>
+  <!--</div>-->
     <% if @user.name != "guestuser" %>
-    <div>
+    <div class="columns px-6 pt-6">
       <%= link_to  edit_user_path, class: "button is-outlined" do %>
         <i class="fa fa-pencil fa-2x"></i>
       <% end %>

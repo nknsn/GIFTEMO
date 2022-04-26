@@ -5,7 +5,8 @@ class Public::SearchesController < ApplicationController
     @model = params[:model]
     @content = params[:content]
     @method = params[:method]
-    @present_list = PresentList.find_by(scene: params[:scene])
+    @present_list = PresentList.new(scene: params[:content])
+    # binding.irb
     if @model == "Friend"
       @records = Friend.search_for(@content,@method)
     else

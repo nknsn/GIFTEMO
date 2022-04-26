@@ -92,7 +92,7 @@ body {
     transform: translateX(-250px);
     transition: transform 250ms ease-in-out;
     background: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
-
+    z-index: 9999;
 }
 .sidebarMenuInner{
     margin:0;
@@ -134,7 +134,7 @@ input[type=checkbox] {
     box-sizing: border-box;
     cursor: pointer;
     position: absolute;
-    z-index: 99;
+    z-index: 100;    //要素の重なりを調整
     height: 100%;
     width: 100%;
     top: 22px;
@@ -189,8 +189,18 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 }
 
 
-Resources
+// Resources
 
+
+
+.tile is-parent is-vertical {
+  position: absolute;
+  z-index: 10;
+}
+
+.tile is-child notification {
+  position: relative;
+}
 
 
 h1 {
