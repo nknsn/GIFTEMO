@@ -18,6 +18,7 @@ class Public::PresentListsController < ApplicationController
         @present_list.birthdate = friend_new.birthdate
         @present_list.save
         redirect_to present_lists_path
+        flash[:notice]='ギフトリストを追加しました！'
       else
         @present_lists = current_user.present_lists.all
         render :index
@@ -28,6 +29,7 @@ class Public::PresentListsController < ApplicationController
         @present_list.name = @friend.name
         @present_list.save
         redirect_to present_lists_path
+        flash[:notice]='ギフトリストを追加しました！'
       else
         @present_lists = current_user.present_lists.all
         render :index
@@ -44,8 +46,8 @@ class Public::PresentListsController < ApplicationController
   def update
     @present_list = PresentList.find(params[:id])
     if @present_list.update(present_list_params)
-      redirect_to present_list_path(current_user)
-      flash[:notice]='更新しました！'
+      redirect_to present_lists_path(current_user)
+      flash[:notice]='ギフトリストを更新しました！'
     else
       render :edit
     end
@@ -54,8 +56,12 @@ class Public::PresentListsController < ApplicationController
 
   def destroy
     @present_list = PresentList.find(params[:id])
-    @present_list.destroy
-    redirect_to request.referer
+    if @present_list.destroy
+      redirect_to request.referer
+      flash[:notice]='ギフトリストを削除しました！'
+    else
+      render :index
+    end
   end
 
 

@@ -29,7 +29,7 @@ class Public::FriendsController < ApplicationController
     @friend = Friend.find(params[:id])
     if @friend.update(friend_params)
       redirect_to friends_path(current_user)
-      flash[:notice]='更新しました！'
+      flash[:notice]='おともだち情報を更新しました！'
     else
       render :edit
     end
@@ -38,8 +38,12 @@ class Public::FriendsController < ApplicationController
 
   def destroy
     @friend = Friend.find(params[:id])
-    @friend.destroy
-    redirect_to request.referer
+    if @friend.destroy
+      redirect_to request.referer
+      flash[:notice]='おともだちを削除しました！'
+    else
+      render :index
+    end
   end
 
 
