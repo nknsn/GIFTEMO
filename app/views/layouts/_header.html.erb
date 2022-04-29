@@ -1,58 +1,53 @@
 <header>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand pt-3 px-6">
-    <!--<section class="section">-->
-  <!--  <div class="column">-->
+
       <%= link_to root_path, class:"header-title" do %>
         <h1 class="title">GIFTEMO</h1>
         <h2 class="subtitle">Leave as a memory.</h2>
       <% end %>
     </div>
     <!--</section>-->
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
 
-    <div class="navbar-end">
-      <% if user_signed_in? %>
-        <!--<div class="search-form">-->
-        <!--  <%#= render 'public/searches/search_form' %>-->
-        <!--</div>-->
-        <div class="nav-item">
-          <%= link_to user_path(current_user), class:"link" do %>
-            <i class="fa fa-heart "> マイページ</i>
-          <% end %>
-        </div><br>
-        <div class="nav-item">
-          <%= link_to destroy_user_session_path, method: :delete, class:"link" do %>
-            <i class="fa fa-lock "> ログアウト</i>
-          <% end %>
-        </div>
-      <!--<%# elsif admin_signed_in? %>-->
-      <!--  <div class="nav-item">-->
-      <!--    <%#= link_to admin_recommend_gift_index_path, class:"link" do %>-->
-      <!--      <i class="fa fa-file-text "> ギフト一覧</i>-->
-      <!--    <%# end %>-->
-      <!--  </div><br>-->
-      <!--  <div class="nav-item">-->
-      <!--    <%#= link_to destroy_admin_session_path, method: :delete, class:"link" do %>-->
-      <!--      <i class="fa fa-lock "> ログアウト</i>-->
-      <!--    <%# end %>-->
-      <!--  </div>-->
-      <% else %>
-        <div class="nav-item">
-          <%= link_to new_user_registration_path, class:"link-1" do %>
-            <span><i class="fa fa-user"></i> 新規登録</span>
-          <% end %>
-        </div><br>
-        <div class="nav-item">
-          <%= link_to new_user_session_path, class:"link-1" do %>
-            <span><i class="fa fa-unlock-alt "></i> ログイン</span>
-          <% end %>
-        </div><br>
-        <div class="nav-item">
-          <%= link_to users_guest_sign_in_path, method: :post, class:"link" do %>
-            <span><i class="fa fa-user-secret "></i> ゲストログイン</span>
+    <div id="menu" class="navbar-menu">
+
+      <div class="navbar-end">
+        <% if user_signed_in? %>
+
+          <div class="nav-item">
+            <%= link_to user_path(current_user), class:"link" do %>
+              <i class="fa fa-heart "> マイページ</i>
+            <% end %>
+          </div><br>
+          <div class="nav-item">
+            <%= link_to destroy_user_session_path, method: :delete, class:"link" do %>
+              <i class="fa fa-lock "> ログアウト</i>
+            <% end %>
+          </div>
+
+          <% else %>
+            <div class="nav-item">
+              <%= link_to new_user_registration_path, class:"link-1" do %>
+                <span><i class="fa fa-user"></i> 新規登録</span>
+              <% end %>
+            </div><br>
+            <div class="nav-item">
+              <%= link_to new_user_session_path, class:"link-1" do %>
+                <span><i class="fa fa-unlock-alt "></i> ログイン</span>
+              <% end %>
+            </div><br>
+            <div class="nav-item">
+              <%= link_to users_guest_sign_in_path, method: :post, class:"link" do %>
+                <span><i class="fa fa-user-secret "></i> ゲストログイン</span>
+              <% end %>
+            </div>
           <% end %>
         </div>
-      <% end %>
-    </div>
+      </div>
   </nav>
 </header>
