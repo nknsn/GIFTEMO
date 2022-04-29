@@ -11,27 +11,27 @@
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
           <div class="field">
-            <%= f.label :email, class: "label" %>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>
+            <%#= f.label :email, class: "label" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "Eメール", class: "input" %>
           </div>
 
           <div class="field">
-            <%= f.label :password, class: "label" %>
-            <%= f.password_field :password, autocomplete: "current-password", class: "input" %>
+            <%#= f.label :password, class: "label" %>
+            <%= f.password_field :password, autocomplete: "current-password", :placeholder => "パスワード（6文字以上）", class: "input" %>
           </div>
 
           <% if devise_mapping.rememberable? %>
             <div class="field">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me%>
+              <%= f.check_box :remember_me, class: "input" %>
+              <%#= f.label :remember_me %>
             </div><br>
           <% end %>
 
           <div class="actions">
-            <%= f.submit "Log in", class: "button is-black" %>
+            <%= f.submit "ログインする", class: "button is-black" %>
           </div>
         <% end %>
-
+        <br>
         <%= render "public/shared/links" %>
       </div>
     </div>

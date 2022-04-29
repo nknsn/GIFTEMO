@@ -1,36 +1,42 @@
-<div>
-    <div class="column is-one-thirds px-6">
-        <%= form_with model: friend, url: friends_path, method: :post do |f| %>
-        <div class="tile is-ancestor">
-          <div class="tile is-parent is-vertical">
-            <div class="tile is-child notification">
-              <h1 class="mt-2">
-              <strong><i class="fa fa-child fa-lg "></i>おともだち登録</strong></h1><br>
 
-                <%= f.text_field :name, :placeholder => "なまえ", class: "input" %><br>
+<div class="columns">
+  <div class="column is-two-thirds">
+  </div>
+  <div class="column is-one-thirds">
+  </div>
+</div>
 
-                <br>
-                <h4><i class="fa fa-birthday-cake fa-lg "></i></h4>
-                <%= f.date_select :birthdate, use_month_numbers: true,start_year: 1940, end_year: (Time.now.year - 10), default: Date.new(2000, 1, 1) %><br>
-                <br>
+<div class="column is-one-thirds px-6">
+    <%= form_with model: friend, url: friends_path, method: :post do |f| %>
+    <div class="tile is-ancestor">
+      <div class="tile is-parent is-vertical">
+        <div class="tile is-child notification">
+          <h1 class="mt-2">
+          <strong><i class="fa fa-child fa-lg "></i>おともだち登録</strong></h1><br>
 
-                <i class="fa fa-camera-retro fa-lg "></i>
-                <%= f.file_field :image, accept: "image/*" %><br>
-                <br>
-                <%= f.submit "登録",  class: "button is-black"  %>
-        <% end %>
-            </div>
-          </div>
+            <%= f.text_field :name, :placeholder => "なまえ", class: "input" %><br>
+
+            <br>
+            <h4><i class="fa fa-birthday-cake fa-lg "></i></h4>
+            <%= f.date_select :birthdate, use_month_numbers: true,start_year: 1940, end_year: (Time.now.year - 10), default: Date.new(2000, 1, 1) %><br>
+            <br>
+
+            <i class="fa fa-camera-retro fa-lg "></i>
+            <%= f.file_field :image, accept: "image/*" %><br>
+            <br>
+            <%= f.submit "登録",  class: "button is-black"  %>
+    <% end %>
         </div>
-      <div class=”error”>
-        <% if friend.errors.any? %>
-          <h5><%= friend.errors.count %>件のエラーが発生しました</h5>
-          <ul>
-            <% friend.errors.full_messages.each do |message| %>
-            <h5><li><%= message %></li></h5>
-            <% end %>
-          </ul>
-        <% end %>
       </div>
     </div>
+  <div class=”error”>
+    <% if friend.errors.any? %>
+      <h5><%= friend.errors.count %>件のエラーが発生しました</h5>
+      <ul>
+        <% friend.errors.full_messages.each do |message| %>
+        <h5><li><%= message %></li></h5>
+        <% end %>
+      </ul>
+    <% end %>
   </div>
+</div>

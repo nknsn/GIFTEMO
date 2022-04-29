@@ -12,37 +12,39 @@
         <%= render "public/shared/error_messages", resource: resource %>
 
           <div class="field">
-            <%= f.label :name, class: "label" %>
-            <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input" %>
+            <%#= f.label :name, class: "label" %>
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", :placeholder => "なまえ", class: "input" %>
           </div>
 
           <div class="field">
-            <%= f.label :birthdate, class: "label" %>
-          <%= f.date_select :birthdate, use_month_numbers: true,start_year: 1940, end_year: (Time.now.year - 10), default: Date.new(2000, 1, 1), class: "input" %>
+            <%#= f.label :birthdate, class: "label" %>
+            <i class="fa fa-birthday-cake fa-lg "></i>
+            <%= f.date_select :birthdate, use_month_numbers: true,start_year: 1940, end_year: (Time.now.year - 10), default: Date.new(2000, 1, 1), class: "input" %>
           </div>
 
           <div class="field">
-            <%= f.label :email, class: "label" %>
-            <%= f.email_field :email, autocomplete: "email", class: "input" %>
+            <%#= f.label :email, class: "label" %>
+            <%= f.email_field :email, autocomplete: "email", :placeholder => "Eメール", class: "input" %>
           </div>
 
           <div class="field">
-            <%= f.label :password, class: "label" %>
-            <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %>
-            <%= f.password_field :password, autocomplete: "new-password", class: "input" %>
+            <%#= f.label :password, class: "label" %>
+            <%# if @minimum_password_length %>
+            <!--<em>(<%#= @minimum_password_length %> characters minimum)</em>-->
+            <%# end %>
+            <%= f.password_field :password, autocomplete: "new-password", :placeholder => "パスワード（6文字以上）", class: "input" %>
           </div>
 
           <div class="field">
-            <%= f.label :password_confirmation, class: "label" %>
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input" %>
+            <%#= f.label :password_confirmation, class: "label" %>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "パスワード（確認用）", class: "input" %>
           </div><br>
 
           <div class="actions">
-            <%= f.submit "Sign up", class: "button is-black" %>
+            <%= f.submit "登録する", class: "button is-black" %>
           </div>
         <% end %>
+        <br>
         <%= render "public/shared/links" %>
       </div>
     </div>
