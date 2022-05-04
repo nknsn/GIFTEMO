@@ -3,7 +3,7 @@ class Public::FriendsController < ApplicationController
 
   def index
     @friend = Friend.new
-    @friends = Friend.where(user_id: current_user.id)
+    @friends = Friend.where(user_id: current_user.id) #ユーザーのfriends
   end
 
 
