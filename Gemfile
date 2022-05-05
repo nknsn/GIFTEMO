@@ -60,6 +60,7 @@ gem 'dotenv-rails'
 gem 'rakuten_web_service'
 gem "bulma-rails", "~> 0.8.0"
 gem 'devise-i18n'
+gem "enum_help"
 
 group :production do
   gem 'mysql2'
