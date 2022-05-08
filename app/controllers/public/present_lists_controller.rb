@@ -10,6 +10,12 @@ class Public::PresentListsController < ApplicationController
 
   def create
     @present_list = current_user.present_lists.new(present_list_params)
+    if params[:present_list][:category] == "give"
+      @present_list.category = "give"
+    else
+      @present_list.category = "have"
+    end
+
     if params[:present_list][:friend_number] == "2"
       birthdate = "#{present_list_params['birthdate(1i)']}-#{present_list_params['birthdate(2i)']}-#{present_list_params['birthdate(3i)']}"
       friend_new = current_user.friends.new(name: friend_params['name'], birthdate: birthdate)

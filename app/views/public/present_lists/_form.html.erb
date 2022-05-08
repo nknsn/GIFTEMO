@@ -11,6 +11,14 @@
 
                 <%= f.date_field :date %><br>
 
+              <div class="fields-label">
+                <label><%= f.radio_button :category, PresentList.categories.key(0) %></label>
+                <label><%= f.label :category, PresentList.categories_i18n[:give] %></label>
+
+                <label><%= f.radio_button :category, PresentList.categories.key(1) %></label>
+                <label><%= f.label :category, PresentList.categories_i18n[:have] %></label>
+              </div>
+                <br><br>
                 <%= f.radio_button :friend_number, 1 %>
                 <%= f.label :friend_number_1, "おともだちリストから選択" %>
 

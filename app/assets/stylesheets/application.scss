@@ -248,6 +248,20 @@ footer{
 }
 
 
+
+.fields-label label{
+font-size: 20px;
+font-weight: bold;
+display: block; /* ブロックレベル要素化する */
+float: left; /* 要素の左寄せ・回り込を指定する */
+
+}
+
+// input[type=radio] {
+// display: none; /* ラジオボタンを非表示にする */
+// }
+
+
 @media screen and (max-width:425px) {
   .header {
     width: 90%;

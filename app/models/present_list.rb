@@ -2,6 +2,8 @@ class PresentList < ApplicationRecord
 
   belongs_to :user
 
+  enum category: { give: 0, have: 1 }
+
   validates :date, presence: true
   validates :name, presence: true
   validates :item, presence: true
