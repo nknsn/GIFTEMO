@@ -2,10 +2,10 @@ ja:
   enums:
     present_list:
       category:
-        give: "贈り物"
-        have: "頂き物"
+        give:  "贈り物"
+        have:  "頂き物"
 
-ja:
+
   date:
     order:
       - :year

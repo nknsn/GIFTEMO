@@ -257,9 +257,9 @@ float: left; /* 要素の左寄せ・回り込を指定する */
 
 }
 
-input[type=radio] {
-display: none; /* ラジオボタンを非表示にする */
-}
+// input[type=radio] {
+// display: none; /* ラジオボタンを非表示にする */
+// }
 
 
 @media screen and (max-width:425px) {

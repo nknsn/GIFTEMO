@@ -12,10 +12,12 @@
                 <%= f.date_field :date %><br><br>
 
                 <%= f.radio_button :category, PresentList.categories.key(0) %>
-                <%= f.label :category, PresentList.categories_i18n[:give], class: "button is-danger is-light"  %>
+                <%= f.label :category, PresentList.categories_i18n[:give] %>
+                <%#= f.label :category, PresentList.categories_i18n[:give], class: "button is-danger is-light" %>
 
                 <%= f.radio_button :category, PresentList.categories.key(1) %>
-                <%= f.label :category, PresentList.categories_i18n[:have], class: "button is-danger is-light"  %>
+                <%= f.label :category, PresentList.categories_i18n[:have] %>
+                <%# f.label :category, PresentList.categories_i18n[:have], class: "button is-danger is-light" %>
                 <br><br>
                 <%= f.radio_button :friend_number, 1 %>
                 <%= f.label :friend_number_1, "おともだちリストから選択" %>
