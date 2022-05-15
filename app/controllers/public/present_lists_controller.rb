@@ -74,7 +74,7 @@ class Public::PresentListsController < ApplicationController
   private
 
   def present_list_params
-    params.require(:present_list).permit(:date,:item,:scene,:user_id,:name,:birthdate)
+    params.require(:present_list).permit(:date,:item,:scene,:user_id,:name,:birthdate,:category)
   end
 
   def friend_params

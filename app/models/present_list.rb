@@ -9,6 +9,8 @@ class PresentList < ApplicationRecord
   validates :item, presence: true
   validates :scene, presence: true
 
+  default_scope -> { order(date: :asc) } #orderメソッドで日付の昇順
+
 
 
   def self.search_for(content, method)

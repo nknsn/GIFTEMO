@@ -8,6 +8,7 @@ class Friend < ApplicationRecord
   validates :birthdate, presence: true
 
 
+
   # def self.search_for(content, method)
   #   if method == 'perfect_match'
   #     Friend.where(name: content)
