@@ -5,6 +5,11 @@ class Public::PresentListsController < ApplicationController
   def index
     @present_list = PresentList.new
     @present_lists = current_user.present_lists.all
+    # if params[:status] == "贈り物"
+    #   @present_lists = PresentList.where(category: "give")
+    # else params[:status] == "頂き物"
+    #   @present_lists = PresentList.where(category: "have")
+    # end
   end
 
 
