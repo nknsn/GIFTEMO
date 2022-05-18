@@ -262,18 +262,5 @@ float: left; /* 要素の左寄せ・回り込を指定する */
 // }
 
 
-@media screen and (max-width:425px) {
-  .header {
-    width: 90%;
-  }
 
 
-  .table table-bordered,
-  .table table-bordered th {
-    text-align: center;
-    padding: 4px 12px;
-    display: block;
-    width: 100%
-  }
-
-}
