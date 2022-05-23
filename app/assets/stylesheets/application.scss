@@ -52,6 +52,26 @@ p1 {
   color: #FFFFFF;
 }
 
+.button {
+  display       : inline-block;
+  border-radius : 45%;          /* 角丸       */
+  font-size     : 13pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 14px 1px;   /* 余白       */
+  background    : #000000;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  border        : 2px solid #000000;    /* 枠の指定 */
+}
+
+.button:hover {
+  color         : #000000;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
 html, body {
     overflow-x: hidden;
@@ -260,7 +280,6 @@ float: left; /* 要素の左寄せ・回り込を指定する */
 // input[type=radio] {
 // display: none; /* ラジオボタンを非表示にする */
 // }
-
 
 
 
