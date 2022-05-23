@@ -53,31 +53,32 @@ p1 {
 }
 
 p2 {
-  display       : inline-block;
-  border-radius : 25%;
-  font-size     : 15px;
-  padding       : 5px 12px;
-  text-align    : center;
-  background : rgba(153, 153, 255, 0.74);
+  display: inline-block;
+  border-radius: 48%;
+  font-size: 15px;
+  padding: 5px 12px;
+  text-align: center;
+  background: rgba(153, 153, 255, 0.53);
 }
 
+
 .button {
-  display       : inline-block;
-  border-radius : 45%;          /* 角丸       */
-  font-size     : 13pt;        /* 文字サイズ */
-  text-align    : center;      /* 文字位置   */
-  cursor        : pointer;     /* カーソル   */
-  padding       : 14px 1px;   /* 余白       */
-  background    : #000000;     /* 背景色     */
-  color         : #ffffff;     /* 文字色     */
-  line-height   : 1em;         /* 1行の高さ  */
-  transition    : .3s;         /* なめらか変化 */
-  border        : 2px solid #000000;    /* 枠の指定 */
+  display: inline-block;
+  border-radius: 45%;          /* 角丸       */
+  font-size: 13pt;        /* 文字サイズ */
+  text-align: center;      /* 文字位置   */
+  cursor: pointer;     /* カーソル   */
+  padding: 14px 1px;   /* 余白       */
+  background: #000000;     /* 背景色     */
+  color: #ffffff;     /* 文字色     */
+  line-height: 1em;         /* 1行の高さ  */
+  transition: .3s;         /* なめらか変化 */
+  border: 2px solid #000000;    /* 枠の指定 */
 }
 
 .button:hover {
-  color         : #000000;     /* 背景色     */
-  background    : #ffffff;     /* 文字色     */
+  color: #000000;     /* 背景色     */
+  background: #ffffff;     /* 文字色     */
 }
 
 
@@ -102,6 +103,7 @@ body {
     width: 100%;
     text-align: center;
 }
+
 .mainInner div{
     display:table-cell;
     vertical-align: middle;
@@ -109,6 +111,7 @@ body {
     font-weight: bold;
     letter-spacing: 1.25px;
 }
+
 #sidebarMenu {
     height: 100%;
     position: fixed;
@@ -120,11 +123,13 @@ body {
     background: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
     z-index: 9999;
 }
+
 .sidebarMenuInner{
     margin:0;
     padding:0;
     border-top: 1px solid rgba(255, 255, 255, 0.10);
 }
+
 .sidebarMenuInner li{
     list-style: none;
     color: #fff;
@@ -139,6 +144,7 @@ body {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.50);
 }
+
 .sidebarMenuInner li a{
     color: #808080;
     text-transform: uppercase;
@@ -146,6 +152,7 @@ body {
     cursor: pointer;
     text-decoration: none;
 }
+
 input[type="checkbox"]:checked ~ #sidebarMenu {
     transform: translateX(0);
 }
@@ -155,6 +162,7 @@ input[type=checkbox] {
     box-sizing: border-box;
     display: none;
 }
+
 .sidebarIconToggle {
     transition: all 0.3s;
     box-sizing: border-box;
@@ -168,6 +176,7 @@ input[type=checkbox] {
     height: 22px;
     width: 22px;
 }
+
 .spinner {
     transition: all 0.3s;
     box-sizing: border-box;
@@ -176,6 +185,7 @@ input[type=checkbox] {
     width: 100%;
     background-color: #fff;
 }
+
 .horizontal {
     transition: all 0.3s;
     box-sizing: border-box;
@@ -183,12 +193,14 @@ input[type=checkbox] {
     float: left;
     margin-top: 3px;
 }
+
 .diagonal.part-1 {
     position: relative;
     transition: all 0.3s;
     box-sizing: border-box;
     float: left;
 }
+
 .diagonal.part-2 {
     transition: all 0.3s;
     box-sizing: border-box;
@@ -196,17 +208,20 @@ input[type=checkbox] {
     float: left;
     margin-top: 3px;
 }
+
 input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
     transition: all 0.3s;
     box-sizing: border-box;
     opacity: 0;
 }
+
 input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
     transition: all 0.3s;
     box-sizing: border-box;
     transform: rotate(135deg);
     margin-top: 8px;
 }
+
 input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     transition: all 0.3s;
     box-sizing: border-box;
