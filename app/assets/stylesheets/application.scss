@@ -52,6 +52,15 @@ p1 {
   color: #FFFFFF;
 }
 
+p2 {
+  display       : inline-block;
+  border-radius : 25%;
+  font-size     : 15px;
+  padding       : 5px 12px;
+  text-align    : center;
+  background : rgba(153, 153, 255, 0.74);
+}
+
 .button {
   display       : inline-block;
   border-radius : 45%;          /* 角丸       */
