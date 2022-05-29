@@ -12,9 +12,6 @@ class Public::RecommendGiftsController < ApplicationController
     else params[:status] == "body"
       @items = RakutenWebService::Ichiba::Item.search(:keyword => '化粧品', :genreId => '216671')
     end
-
-    # if params[:keyword]
-    #   @items = RakutenWebService::Ichiba::Item.search(:keyword => '', :genreId => '565598')
-    # end
   end
+
 end

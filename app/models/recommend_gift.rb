@@ -1,2 +1,0 @@
-class RecommendGift < ApplicationRecord
-end

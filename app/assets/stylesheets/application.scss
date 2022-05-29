@@ -61,24 +61,40 @@ p2 {
   background: rgba(153, 153, 255, 0.53);
 }
 
+.box {
+  margin        : auto;
+  box-sizing    : border-box;           /* 罫線も含む長さ       */
+  width         : 100%;
+  max-width     : 500px;
+  height        : 100px;
+  padding       : 17px;
+  font-size     : 50px;
+  text-align    : center;
+  color         : #999999;
+  background    : rgba(204, 204, 204, 0.32);
+  border        : 13px double #999999;    /* 枠線の指定           */
+  border-radius : 19px;                  /* 角丸の指定           */
+  box-shadow    : 0 0 0 4px rgba(204, 204, 204, 0.32);
+}
+
 
 .button {
   display: inline-block;
   border-radius: 45%;          /* 角丸       */
-  font-size: 13pt;        /* 文字サイズ */
-  text-align: center;      /* 文字位置   */
+  font-size: 13pt;
+  text-align: center;
   cursor: pointer;     /* カーソル   */
-  padding: 14px 1px;   /* 余白       */
-  background: #000000;     /* 背景色     */
-  color: #ffffff;     /* 文字色     */
-  line-height: 1em;         /* 1行の高さ  */
+  padding: 14px 1px;
+  background: #000000;
+  color: #ffffff;
+  line-height: 1em;
   transition: .3s;         /* なめらか変化 */
   border: 2px solid #000000;    /* 枠の指定 */
 }
 
 .button:hover {
-  color: #000000;     /* 背景色     */
-  background: #ffffff;     /* 文字色     */
+  color: #000000;
+  background: #ffffff;
 }
 
 
