@@ -22,7 +22,7 @@
                 <%= f.radio_button :friend_number, 1 %>
                 <%= f.label :friend_number_1, "おともだちリストから選択" %>
 
-                <%= f.select :friend_id, options_from_collection_for_select(Friend.all, :id, :name) %><br><br>
+                <%= f.select :friend_id, options_from_collection_for_select(Friend.all, :user_id, :name) %><br><br>
 
                 <%= f.radio_button :friend_number, 2 %>
                 <%= f.label :friend_number_2, "おともだちリストに追加" %><br>

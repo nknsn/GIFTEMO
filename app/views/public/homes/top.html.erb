@@ -1,25 +1,28 @@
 <div class="columns pt-6 is-centered">
+  <% if user_signed_in? %>
+    <duv></duv>
+  <% else %>
+    <div class="pl-3">
+      <%= link_to new_user_registration_path, class:"link" do %>
+        <i class="fa fa-user fa-5x"></i><br>
+        <span>新規登録</span>
+      <% end %>
+    </div>
 
-  <div class="pl-3">
-    <%= link_to new_user_registration_path, class:"link" do %>
-      <i class="fa fa-user fa-5x"></i><br>
-      <span>新規登録</span>
-    <% end %>
-  </div>
+    <div class="pl-6">
+      <%= link_to new_user_session_path, class:"link" do %>
+        <i class="fa fa-unlock-alt fa-5x"></i><br>
+        <span>ログイン</span>
+      <% end %>
+    </div>
 
-  <div class="pl-6">
-    <%= link_to new_user_session_path, class:"link" do %>
-      <i class="fa fa-unlock-alt fa-5x"></i><br>
-      <span>ログイン</span>
-    <% end %>
-  </div>
-
-  <div class="pl-6">
-    <%= link_to users_guest_sign_in_path, method: :post, class:"link" do %>
-      <i class="fa fa-user-secret fa-5x"></i><br>
-      <span>  ゲスト用</span>
-    <% end %>
-  </div>
+    <div class="pl-6">
+      <%= link_to users_guest_sign_in_path, method: :post, class:"link" do %>
+        <i class="fa fa-user-secret fa-5x"></i><br>
+        <span>  ゲスト用</span>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
 <%= render 'public/recommend_gifts/top' %>
