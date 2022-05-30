@@ -1,6 +1,7 @@
 class Public::FriendsController < ApplicationController
   before_action :authenticate_user!
 
+
   def index
     @friend = Friend.new
     @friends = Friend.where(user_id: current_user.id) #ユーザーのfriends
@@ -53,5 +54,6 @@ class Public::FriendsController < ApplicationController
   def friend_params
     params.require(:friend).permit(:name,:birthdate,:image)
   end
+
 
 end

@@ -2,6 +2,7 @@ class Public::PresentListsController < ApplicationController
 
   before_action :authenticate_user!
 
+
   def index
     @present_list = PresentList.new
     @present_lists = current_user.present_lists.all
@@ -80,4 +81,7 @@ class Public::PresentListsController < ApplicationController
   def friend_params
     params.require(:friend).permit(:name,:birthdate,:friend_id)
   end
+
+
+
 end
