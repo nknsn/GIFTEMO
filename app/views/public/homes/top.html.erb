@@ -1,6 +1,20 @@
 <div class="columns pt-6 is-centered">
   <% if user_signed_in? %>
-    <duv></duv>
+    <div class="pl-3">
+      <%= link_to user_path(current_user), class:"link" do %>
+        <i class="fa fa-smile-o fa-5x"></i><br>
+        <span>マイページ</span>
+      <% end %>
+    </div>
+
+    <div class="pl-6"></div>
+
+    <div class="pl-6">
+      <%= link_to destroy_user_session_path, method: :delete, class:"link" do %>
+        <i class="fa fa-lock fa-5x"></i><br>
+        <span>ログアウト</span>
+      <% end %>
+    </div>
   <% else %>
     <div class="pl-3">
       <%= link_to new_user_registration_path, class:"link" do %>
